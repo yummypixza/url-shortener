@@ -1,0 +1,8 @@
+{
+  "mysql": {
+    "connection": "MYSQL_CONN_STRING"
+  },
+  "rendertron": {
+    "host": "RENDERTRON_HOST"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mysql": {
+    "client": "mysql2",
+    "connection": "mysql://app:app@localhost:3309/short_link_generator"
+  },
+  "authentication": {
+    "secret": "538b79034bf8c668f0b31a5ff3146d5a7df41785e81b938cd0d147b4ff7ca3f13846aa358c106ae2f8fb62fe6326c0e5cd60386b98a2d284e504d66c1d20ea027f33804ceec6e7f338d6023bc0f45e451a9dcd201f412422443efa08693f51e32be7b651989cc9df9493e856a92485a2be1f2c0a3b286c80f9e6c584d226d63ff0e393bfec7f0eb3cdfe02f8c96b063c928a09a6a86a4d8f32f0d6e3ac283e4195d061e66ac3746d924ee23df1dd03a005e79f498fa16acfcab4afb9a266d41873ca55c8961f560ab6124b245dda56b1fd4888579d969d3872ab5bb2693cfe159f1b715b6fcc0532b563b0d820e47889c86cec11af35aeaef8ead000eac9b81c",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/api/authentication",
+    "service": "/api/user",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "rendertron": {
+    "host": "http://localhost:8080",
+    "screenshot": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}
